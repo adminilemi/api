@@ -1,45 +1,43 @@
-import './HeroSectionLandingPage.css'
-import bigCard from "../../assets/images/BigCard.svg";
-import smallCard from "../../assets/images/card.svg";
-import ReusableButton from '../Re-useable-components/ReuseableButton';
-import {useNavigate} from "react-router-dom"
+import './HeroSectionLandingPage.scss';
+import bigCard from '../../assets/images/heroImag.svg';
 
-function HeroSectionLandingPage(){
-  const navigate = useNavigate()
-    const joinOurWaitingListButton =()=>{
-        navigate('/join-form')
-    }
-return (
-    <div className="landing-top-main-div">
-    
-        <div className="left-side-div">
-            <div className='topmost'>
-            <h1 className='prominent-text'>Buy, rent, or sell<br/> your property<br/> easily</h1>
-            <p>A great platform to buy, sell, or even rent your<br/> properties without any commissions.</p>
-            </div>
-           <div className='lower-part'>
-           <p className='p-with-color'>No Spam Promise</p><br/>
+import { Link } from 'react-router-dom';
 
-            <h2 className=''>Are you a landlord?</h2> 
-            <p>Discover ways to increase your home value and get listed  No Spam</p><br/>
-            <div className='input-div'>
-              <ReusableButton
-                text={"JOIN OUR WAIT LIST"} 
-                    onClick={joinOurWaitingListButton}  maxWidth="34vw" width="100%" height="45px" backgroundColor={'#5F259F'}
-              />
-            <p>Join 10,000+other landlords in our Ile-Mi Waiting List</p>
-            </div>
-            
+function HeroSectionLandingPage() {
+  return (
+    <main className='homeHero  col-12'>
+      <section className=' d-flex flex-column flex-md-row justify-content-between align-items-center'>
+        <article className='text d-flex flex-column  text-center text-lg-start col-12 col-md-8 mx-auto col-lg-4 '>
+          <div className='d-flex flex-column justify-content-between ms-lg-4 ms-0'>
+            <h1 className='my-3'>Buy, rent, or sell your property easily</h1>
+            <p>
+              A great platform to buy, sell, or even rent your properties
+              without any commissions.
+            </p>
+          </div>
 
-           </div>
-            
-        </div>
-      <div className="right-side-div">
-        <img className='image1' src={bigCard} alt=''/>
-        <img className='image2' src={smallCard} alt=''/>
-      </div>
-    </div>
-)
+          <div className='noSpam d-flex flex-column justify-content-between my-5 ms-lg-4  ms-0'>
+            <h3 className='text-start mb-2'>No Spam Promise</h3>
+
+            <h4 className='my-2'>Are you a landlord?</h4>
+            <p>
+              Discover ways to increase your home value and get listed No Spam
+            </p>
+            <Link to='/join-form' className='main-btn my-3'>
+              JOIN OUR WAIT LIST
+            </Link>
+            <p>
+              Join <strong>10,000+</strong> other landlords in our Ile-Mi
+              Waiting List
+            </p>
+          </div>
+        </article>
+        <article className='col-12 col-lg-6 d-none d-lg-flex'>
+          <img className='image1' src={bigCard} alt='' />
+        </article>
+      </section>
+    </main>
+  );
 }
 
 export default HeroSectionLandingPage;

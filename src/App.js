@@ -1,24 +1,28 @@
-
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import LandingPage from './pages/LandingPage';
-import SubscribePage from './pages/SubscribePage';
-import About from './pages/about/About';
-
-import ContactUs from './pages/ContactUsPage';
+import LandingPage from './pages/Home/LandingPage';
+import About from './pages/About/About';
+import SubscribePage from './pages/SubscribeForm/SubscribePage';
+import ContactUs from './pages/ContactUs/ContactUsPage';
+import { useEffect } from 'react';
+import 'aos/dist/aos.css';
+import NavBar from './Components/Navbar/NavBar';
 
 function App() {
+  const AOS = require('aos');
+  useEffect(() => {
+    AOS.init();
+  }, [AOS]);
   return (
-    <div className="App">
-      
+    <div className='App'>
       <Router>
-          <Routes>
-            <Route path='/' element={<LandingPage/>}/>
-            <Route path='/about' element={<About/>}/>
-            <Route path='/join-form' element={<SubscribePage/>}/>
-            <Route path='/contact-us' element={<ContactUs/>}/>
-      
-          </Routes>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/join-form' element={<SubscribePage />} />
+          <Route path='/contact-us' element={<ContactUs />} />
+        </Routes>
       </Router>
     </div>
   );
