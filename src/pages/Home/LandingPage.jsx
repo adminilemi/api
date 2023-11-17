@@ -12,7 +12,7 @@ function LandingPage() {
       <HeroSectionLandingPage />
 
       <section className='beTheFirst container d-flex flex-column flex-lg-row justify-content-between align-items-center mt-5'>
-        <article className=' col-12 col-lg-5 mb-4 mb-lg-0'>
+        <article data-aos='zoom-in' className=' col-12 col-lg-5 mb-4 mb-lg-0'>
           <figure className='icon mx-3'>
             <img src={vHome} alt='' />
           </figure>
@@ -34,7 +34,7 @@ function LandingPage() {
         </article>
 
         <article className='homeImage col-12 col-lg-7 mb-4 mb-lg-0 '>
-          <figure className='d-none d-md-flex'>
+          <figure data-aos='zoom-in' className='d-none d-md-flex'>
             <img src={homeIllustration} alt='' />
           </figure>
           <figure className='d-flex d-md-none'>

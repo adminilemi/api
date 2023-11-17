@@ -30,8 +30,8 @@ function NavBar() {
           <NavLink
             to='/'
             className='col-8 col-md-4 col-lg-2 d-flex flex-row align-items-center  logo'
-            // data-aos='zoom-in'
-            // data-aos-duration='1500'
+            data-aos='zoom-in'
+            data-aos-duration='1500'
           >
             <img src={Logo} alt=' Ile-Mi Logo' />
           </NavLink>
@@ -44,9 +44,9 @@ function NavBar() {
               {/* nav Links */}
               <section className='col-12 d-flex align-items-center justify-content-between  '>
                 <ul
-                  // data-aos='fade-right'
-                  // data-aos-duration='1500'
-                  className='navItems d-flex flex-column flex-lg-row  col-12 justify-content-end align-items-center gap-5'
+                  data-aos='fade-right'
+                  data-aos-duration='1500'
+                  className='navItems d-flex flex-column flex-lg-row  col-12 justify-content-end align-items-center gap-2'
                 >
                   <li className='d-flex flex-column flex-lg-row col-12 col-lg-4 text-enter text-lg-end justify-content-between'>
                     {linkList.map(({ id, title, url }) => (
@@ -62,7 +62,7 @@ function NavBar() {
                       </NavLink>
                     ))}
                   </li>
-                  <li className='d-flex justify-content-center justify-content-lg-end col-12 col-lg-3'>
+                  <li className='d-flex justify-content-center justify-content-lg-end col-12 col-lg-4'>
                     <button
                       className='main-btn'
                       type='button'
