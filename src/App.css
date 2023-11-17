@@ -101,6 +101,17 @@ input::placeholder {
   font-weight: 500;
 }
 
+.landLord {
+  background: #100a55;
+  padding: 2em 1.5em;
+  color: var(--white);
+}
+.landLord h4 {
+  font-size: 1.5em;
+  color: var(--pryColor);
+  margin-bottom: 1em;
+}
+
 @media screen and (max-width: 900px) {
   .isActive {
     margin: 1em auto;
