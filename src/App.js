@@ -7,6 +7,7 @@ import ContactUs from './pages/ContactUs/ContactUsPage';
 import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import NavBar from './Components/Navbar/NavBar';
+import Footer from './Components/main-components/Footer';
 
 function App() {
   const AOS = require('aos');
@@ -23,6 +24,7 @@ function App() {
           <Route path='/join-form' element={<SubscribePage />} />
           <Route path='/contact-us' element={<ContactUs />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

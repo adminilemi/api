@@ -1,74 +1,66 @@
-import Header from '../../Components/main-components/Header';
 import HeroSectionLandingPage from '../../Components/main-components/HeroSectionLandingPage';
-import { useNavigate } from 'react-router-dom';
 
-import './landingpage.css';
-import ReusableButton from '../../Components/Re-useable-components/ReuseableButton';
-import iconImage from '../../assets/images/virtualHomeTour.svg';
-import findBestDeals from '../../assets/images/findBestDeals.svg';
+import './landingpage.scss';
+import vHome from '../../assets/images/virtualHome.svg';
+import homeIllustration from '../../assets/images/Illustration.svg';
+import Tabs from '../../Components/Tabs/Tabs';
+import Button from '../../Components/Button/Button';
 
 function LandingPage() {
-  const navigate = useNavigate();
-  const joinOurWaitingListButton = () => {
-    navigate('/join-form');
-  };
-
   return (
-    <div className='home'>
+    <main className='home'>
       <HeroSectionLandingPage />
-      {/* <div className='second-paragraph'>
-        <div className='picture-div'>
-          <div className='picture-container'>
-            <div className='topmost-div my-4 d-flex justify-between p-2'>
-              <div className='icon mx-3'>
-                <img src={iconImage} alt='' />
-              </div>
-              <div className='text-part'>
-                <p>
-                  <span className=''>Virtual home tour</span> <br />
-                  we provide you with virtual home tour
-                </p>
-              </div>
-            </div>
-            <div className='lower-div my-4 d-flex justify-between p-2'>
-              <div className='text-part'>
-                <p>
-                  <span className=''>Virtual home tour</span> <br />
-                  we provide you with virtual home tour
-                </p>
-              </div>
-              <div className='icon-2 mx-5'>
-                <img src={findBestDeals} alt='' />
-              </div>
-            </div>
+
+      <section className='beTheFirst container d-flex flex-column flex-lg-row justify-content-between align-items-center mt-5'>
+        <article className=' col-12 col-lg-5 mb-4 mb-lg-0'>
+          <figure className='icon mx-3'>
+            <img src={vHome} alt='' />
+          </figure>
+        </article>
+        <article className=' col-12 col-lg-6 p-2 p-lg-5'>
+          <Tabs />
+        </article>
+      </section>
+
+      <section className='findNew mx-auto d-flex flex-column flex-md-row justify-content-between align-items-center mt-5'>
+        <article className='content col-12 col-md-5'>
+          <h2 className='mb-3'>The new way to find your new office</h2>
+          <p>
+            Discover your ideal workspace from a selection of over 10,000 listed
+            commercial properties.
+          </p>
+
+          <Button title='JOIN OUR WAIT  LIST' url='/join-form' />
+        </article>
+
+        <article className='homeImage col-12 col-lg-7 mb-4 mb-lg-0 '>
+          <figure className='d-none d-md-flex'>
+            <img src={homeIllustration} alt='' />
+          </figure>
+          <figure className='d-flex d-md-none'>
+            <img src={homeIllustration} alt='' className='mobileHome ' />
+          </figure>
+        </article>
+      </section>
+
+      <section className='landLord mx-auto d-flex flex-column  justify-content-between align-items-center mt-5 text-center'>
+        <article className='container'>
+          <h4>No Spam Promise</h4>
+          <h2>Are you a landlord/ property owner?</h2>
+          <p className='my-4'>
+            Discover ways to increase your home value and get listed No Spam
+          </p>
+
+          <div className='col-12 col-md-6 mx-auto'>
+            <Button title='JOIN OUR WAIT  LIST' url='/join-form' />
           </div>
-        </div>
-        <div className='text-div'>
-          <div className='btn-div'></div>
-          <div className='main-text-div'>
-            <h2 className='second-paragraph-heading'>
-              Be the first to know <br /> when we go live!
-            </h2>
-            <p className='paragraph-text'>
-              Whether it’s selling your current home, getting financing, renting
-              or buying a new home, we make it easy and efficient. The best
-              part? you’ll save a bunch of money and time with our services.
-            </p>
-          </div>
-          <div className='button-div'>
-            <ReusableButton
-              text={'JOIN OUR WAIT LIST'}
-              onClick={joinOurWaitingListButton}
-              maxWidth='343px'
-              width='100%'
-              height='45px'
-              backgroundColor={'#5F259F'}
-            />
-          </div>
-          <div></div>
-        </div>
-      </div> */}
-    </div>
+          <p>
+            Join <strong>10,000</strong>
+            +other landlords in our Ile-Mi Waiting List
+          </p>
+        </article>
+      </section>
+    </main>
   );
 }
 

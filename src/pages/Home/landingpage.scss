@@ -1,0 +1,73 @@
+.home {
+  margin: 0 auto;
+  background: #fafafe;
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .findNew,
+  .beTheFirst {
+    text-align: center;
+  }
+
+  .findNew {
+    border-radius: 10px;
+    border: 1px solid rgba(160, 156, 156, 0.2);
+    background: #f7f7fd;
+    width: 95%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 10em;
+
+    .content {
+      padding: 0.5em 1em;
+    }
+
+    .mobileHome {
+      position: absolute;
+      top: 200px;
+      right: -90px;
+
+      // img {
+      //   width: 60%;
+      // }
+    }
+  }
+
+  .landLord {
+    background: #100a55;
+    padding: 2em 1.5em;
+    color: var(--white);
+
+    h4 {
+      font-size: 1.5em;
+      color: var(--pryColor);
+      margin-bottom: 1em;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+    .findNew,
+    .beTheFirst {
+      text-align: start;
+    }
+
+    .findNew {
+      padding-bottom: 0;
+      width: 80%;
+
+      .content {
+        padding: 2em 3em;
+      }
+
+      .homeImage {
+        padding: 2em 3em;
+      }
+    }
+  }
+}

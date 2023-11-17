@@ -1,0 +1,39 @@
+.tabsContainer {
+  position: relative;
+
+  .tabTitleContainer {
+    border-right: solid 1px var(--Grey4);
+    // padding: 2em;
+
+    border-radius: 10px;
+    border: 1px solid rgba(160, 156, 156, 0.2);
+    padding: 0.3em 0.5em;
+
+    .tabTitle {
+      cursor: pointer;
+      h4 {
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      @media screen and (max-width: 900px) {
+        h4 {
+          font-size: 0.7rem;
+          margin: 0;
+        }
+      }
+    }
+    .tabActive {
+      border-radius: 10px;
+      padding: 1em 1.5em;
+      background: var(--white);
+      border: 1px solid rgba(160, 156, 156, 0.2);
+    }
+
+    .tabNotActive {
+      border-radius: 10px;
+      padding: 1em 1.5em;
+      color: #6c727f;
+    }
+  }
+}
