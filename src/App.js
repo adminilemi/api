@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import LandingPage from './pages/Home/LandingPage';
-import About from './pages/About/About';
 import SubscribePage from './pages/SubscribeForm/SubscribePage';
 import ContactUs from './pages/ContactUs/ContactUsPage';
 import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import NavBar from './Components/Navbar/NavBar';
 import Footer from './Components/main-components/Footer';
+import About from './pages/About/About';
 
 function App() {
   const AOS = require('aos');
