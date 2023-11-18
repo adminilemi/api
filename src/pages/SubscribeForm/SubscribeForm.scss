@@ -1,0 +1,28 @@
+.subPage {
+  background-color: #f7f6fd;
+  span {
+    color: var(--pryColor);
+  }
+  .pageContent {
+    padding: 3em 2em;
+    .inputWrapper {
+      margin-bottom: 1em;
+    }
+  }
+
+  img {
+    height: auto;
+  }
+
+  .moreInfo {
+    p {
+      font-size: 0.7rem;
+      line-height: 20px;
+    }
+    span {
+      font-size: 0.7rem;
+      color: var(--pryColor);
+      line-height: 15px;
+    }
+  }
+}

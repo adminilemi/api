@@ -7,7 +7,7 @@ import './NavBar.scss';
 
 // images
 import Logo from '../../assets/images/Th-logo.svg';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function NavBar() {
   const [toggle, setToggle] = useState(false);
@@ -63,13 +63,13 @@ function NavBar() {
                     ))}
                   </li>
                   <li className='d-flex justify-content-center justify-content-lg-end col-12 col-lg-4'>
-                    <button
+                    <Link
+                      to='/join-form'
                       className='main-btn'
-                      type='button'
                       data-aos='fade-left'
                     >
                       JOIN OUR WAITING LIST
-                    </button>
+                    </Link>
                   </li>
                 </ul>
               </section>
