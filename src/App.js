@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import NavBar from './Components/Navbar/NavBar';
 import Footer from './Components/main-components/Footer';
-import About from './pages/About/About';
+// import About from './pages/About/About';
 
 function App() {
   const AOS = require('aos');
@@ -20,7 +20,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<LandingPage />} />
-          <Route path='/about' element={<About />} />
+          {/* <Route path='/about' element={<About />} /> */}
           <Route path='/join-form' element={<SubscribePage />} />
           <Route path='/contact' element={<ContactUs />} />
         </Routes>
