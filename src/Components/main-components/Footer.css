@@ -1,17 +1,10 @@
-
-.footer-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.8% 10%;
-    
+.footer-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8% 10%;
 }
-.all-rights-reserved{
-    font-size: 16px;
-    font-weight: 400;
-   
-}
-.thistle-tech-logo{
-    /* width: 83px; */
-    /* height: 71px; */
+.all-rights-reserved {
+  font-size: 16px;
+  font-weight: 400;
 }

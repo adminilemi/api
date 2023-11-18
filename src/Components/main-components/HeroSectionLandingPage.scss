@@ -1,0 +1,27 @@
+.homeHero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // height: 100vh;
+  background: #f7f7fd;
+  padding: 0 1.5em;
+
+  h1 {
+    color: var(--black);
+    padding: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+  }
+
+  .noSpam {
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--pryColor);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 0 1.5em;
+  }
+}
