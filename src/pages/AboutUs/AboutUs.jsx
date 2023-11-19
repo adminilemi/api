@@ -8,7 +8,7 @@ function AboutUs() {
   return (
     <main className='About'>
       <section className='aboutHero d-flex justify-content-center align-items-center p-3'>
-        <h2>
+        <h2 className='col-12 col-md-8 mx-auto'>
           Revolutionizing real estate for seamless transitions between
           properties, making the process easier than ever before.
         </h2>
