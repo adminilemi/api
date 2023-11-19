@@ -15,11 +15,13 @@
   .findNew {
     border-radius: 10px;
     border: 1px solid rgba(160, 156, 156, 0.2);
-    background: #f7f7fd;
+    background: #f7f7fd url('../../assets/images/mobileIllustration.png') bottom
+      center no-repeat;
+    background-size: contain;
     width: 95%;
     overflow: hidden;
     position: relative;
-    padding-bottom: 10em;
+    padding-bottom: 20em;
 
     .content {
       padding: 0.5em 1em;
@@ -36,6 +38,29 @@
     }
   }
 
+  @media screen and (min-width: 700px) {
+    h2 {
+      font-size: 2rem;
+    }
+    .findNew,
+    .beTheFirst {
+      text-align: start;
+    }
+
+    .findNew {
+      background: #f7f7fd;
+      padding-bottom: 0;
+      width: 90%;
+
+      .content {
+        padding: 2em 1em;
+      }
+
+      .homeImage {
+        padding: 2em 3em;
+      }
+    }
+  }
   @media screen and (min-width: 900px) {
     h2 {
       font-size: 2.5rem;
@@ -46,6 +71,7 @@
     }
 
     .findNew {
+      background: #f7f7fd;
       padding-bottom: 0;
       width: 80%;
 

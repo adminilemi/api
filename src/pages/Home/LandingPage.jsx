@@ -38,9 +38,9 @@ function LandingPage() {
           <figure data-aos='zoom-in' className='d-none d-md-flex'>
             <img src={homeIllustration} alt='' />
           </figure>
-          <figure className='d-flex d-md-none'>
+          {/* <figure className='d-flex d-md-none'>
             <img src={homeIllustration} alt='' className='mobileHome ' />
-          </figure>
+          </figure> */}
         </article>
       </section>
 
