@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState } from 'react';
 
 // styles
@@ -29,7 +27,7 @@ function NavBar() {
           {/* Logo */}
           <NavLink
             to='/'
-            className='col-8 col-md-4 col-lg-2 d-flex flex-row align-items-center  logo'
+            className='col-8 col-md-4 col-lg-2 d-flex flex-row align-items-center py-3 logo'
             data-aos='zoom-in'
             data-aos-duration='1500'
           >

@@ -11,7 +11,7 @@ function Footer() {
         </figure>
         <div>
           <p className='all-rights-reserved text-md-end text-center my-4 my-md-0'>
-            © 2023 Thesile Technologies All rights reserved
+            © 2023 Thistle Technologies All rights reserved
           </p>
         </div>
       </section>

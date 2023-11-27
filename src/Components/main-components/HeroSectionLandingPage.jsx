@@ -19,8 +19,8 @@ function HeroSectionLandingPage() {
             </p>
           </div>
 
-          <div className='noSpam d-flex flex-column justify-content-between my-5 ms-lg-4  ms-0'>
-            <h3 className='text-start mb-2'>No Spam Promise</h3>
+          <div className='noSpam d-flex flex-column justify-content-between my-3 ms-lg-4  ms-0'>
+            {/* <h3 className='text-start mb-2'>No Spam Promise</h3> */}
 
             <h4 className='my-2'>Are you a landlord?</h4>
             <p>

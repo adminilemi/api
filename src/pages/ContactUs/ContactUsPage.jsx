@@ -1,12 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactUs.scss';
 import HeroPageReUseable from '../../Components/Re-useable-components/HeroPageReUseable';
 import addressImage from '../../assets/images/AddressImage.svg';
 import phoneImage from '../../assets/images/PhoneImage.svg';
 import emailImage from '../../assets/images/EmailImage.svg';
 import AreYourALandord from '../../Components/AreYourALandord';
+import axios from 'axios';
 
 function ContactUs() {
+  const [formData, setFormdata] = useState({
+    fullName: '',
+    email: '',
+    phoneNumber: '',
+    whatsappNumber: '',
+    category: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  // Handle form event change
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormdata((prevData) => ({ ...prevData, [id]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    console.log(formData);
+
+    try {
+      if (formData) {
+        const sendForm = await axios.post(
+          'https://ile-mi-waitlist-backend-production.up.railway.app/user/join-wait-list',
+          formData,
+        );
+        // Log the response status and body
+        console.log('Response Status:', sendForm.status);
+        const data = await sendForm.json();
+
+        console.log(data);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
   return (
     <main className='contact'>
       <HeroPageReUseable text='Contact us' />
@@ -19,7 +60,10 @@ function ContactUs() {
           how we can turn your vision into reality.
         </p>
         <section className='mt-5'>
-          <form className='d-flex flex-column justify-content-between'>
+          <form
+            onSubmit={handleSubmit}
+            className='d-flex flex-column justify-content-between'
+          >
             <div className='inputWrapper'>
               <input
                 id='fullName'
@@ -27,6 +71,9 @@ function ContactUs() {
                 type='text'
                 placeholder='Full Name *'
                 className='form-control'
+                defaultValue={formData.fullName}
+                onChange={handleChange}
+                required
               />
             </div>
             <div className='inputWrapper'>
@@ -36,6 +83,9 @@ function ContactUs() {
                 type='email'
                 placeholder='Email *'
                 className='form-control'
+                defaultValue={formData.email}
+                onChange={handleChange}
+                required
               />{' '}
             </div>
             <div className='inputWrapper'>
@@ -45,20 +95,43 @@ function ContactUs() {
                 type='number'
                 placeholder='Phone number *'
                 className='form-control'
+                defaultValue={formData.phoneNumber}
+                onChange={handleChange}
+                required
               />{' '}
             </div>
             <div className='inputWrapper'>
-              <select className='form-select'>
-                <option value=''>Select your category</option>
-                <option value='LandLord'>Landlord</option>
-                <option value='Agent'>Agent</option>
-                <option value='Tenant'>Tenant</option>
-                <option value='Advertiser'>Advertiser</option>
+              <input
+                id='whatsappNumber'
+                name='whatsappNumber'
+                type='number'
+                placeholder='Whatsapp number *'
+                className='form-control'
+                defaultValue={formData.whatsappNumber}
+                onChange={handleChange}
+                required
+              />{' '}
+            </div>
+            <div className='inputWrapper'>
+              <select
+                className='form-select'
+                id='category'
+                name='category'
+                defaultValue={formData.category}
+                onChange={handleChange}
+                required
+              >
+                <option value=''>How did you find us?</option>
+                <option value='Instagram'>Instagram</option>
+                <option value='Twitter'>Twitter</option>
+                <option value='Facebook'>Facebook</option>
+                <option value='Whatsapp'>Whatsapp</option>
+                <option value='Word of mouth'>Word of mouth</option>
               </select>
             </div>
             <div className='inputWrapper'>
               <button type='submit' className='main-btn col-12'>
-                Send
+                {loading ? 'Sending...' : 'Send'}
               </button>
             </div>
           </form>
@@ -74,7 +147,7 @@ function ContactUs() {
               </figure>
               <div className='d-flex flex-column'>
                 <p>ADDRESS</p>
-                <span>16 Olujobi Street, Gbagada Shomolu, Lagos Nigeria</span>
+                <span>17 Olujobi Street, Gbagada Shomolu, Lagos Nigeria</span>
               </div>
             </div>
 
@@ -85,7 +158,7 @@ function ContactUs() {
 
               <div className='d-flex flex-column'>
                 <p> PHONE</p>
-                <span>+234 802 304 1037</span>
+                <a href='tel:+234 802 304 1037'>+234 802 304 1037</a>
               </div>
             </div>
 
@@ -97,7 +170,7 @@ function ContactUs() {
               <div className='d-flex flex-column'>
                 <p>EMAIL</p>
 
-                <span>contact@ile-mi.ng</span>
+                <a href='mailto:enquires@ile-mi.ng'>enquires@ile-mi.ng</a>
               </div>
             </div>
           </div>
