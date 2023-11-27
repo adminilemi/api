@@ -55,88 +55,91 @@ function SubscribePage() {
       <HeroPageReUseable text='Subscribe Form' />
 
       <section className='container pageContent mt-5'>
-        <h2 className='my-3'>
-          Let&apos;s get your <span>Details</span>
-        </h2>
-        <p>
-          Be among the first Agent, Landlord or Tenant to know when we go live!
-        </p>
-        <section className='mt-5'>
-          <form
-            onSubmit={handleSubmit}
-            className='d-flex flex-column justify-content-between'
-          >
-            <div className='inputWrapper'>
-              <input
-                id='fullName'
-                name='fullName'
-                type='text'
-                placeholder='Full Name *'
-                className='form-control'
-                defaultValue={formData.fullName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className='inputWrapper'>
-              <input
-                id='email'
-                name='email'
-                type='email'
-                placeholder='Email *'
-                className='form-control'
-                defaultValue={formData.email}
-                onChange={handleChange}
-                required
-              />{' '}
-            </div>
-            <div className='inputWrapper'>
-              <input
-                id='phoneNumber'
-                name='phoneNumber'
-                type='number'
-                placeholder='Phone number *'
-                className='form-control'
-                defaultValue={formData.phoneNumber}
-                onChange={handleChange}
-                required
-              />{' '}
-            </div>
-            <div className='inputWrapper'>
-              <input
-                id='whatsappNumber'
-                name='whatsappNumber'
-                type='number'
-                placeholder='Whatsapp number *'
-                className='form-control'
-                defaultValue={formData.whatsappNumber}
-                onChange={handleChange}
-                required
-              />{' '}
-            </div>
-            <div className='inputWrapper'>
-              <select
-                className='form-select'
-                id='category'
-                name='category'
-                defaultValue={formData.category}
-                onChange={handleChange}
-                required
-              >
-                <option value=''>Select your category</option>
-                <option value='LandLord'>Landlord</option>
-                <option value='Agent'>Agent</option>
-                <option value='Tenant'>Tenant</option>
-                <option value='Advertiser'>Advertiser</option>
-              </select>
-            </div>
-            <div className='inputWrapper'>
-              <button type='submit' className='main-btn col-12'>
-                {loading ? 'Sending...' : 'Send'}
-              </button>
-            </div>
-          </form>
-        </section>
+        <div className='formWrap card'>
+          <h2 className='my-3'>
+            Let&apos;s get your <span>Details</span>
+          </h2>
+          <p>
+            Be among the first Agent, Landlord or Tenant to know when we go
+            live!
+          </p>
+          <section className='mt-5 '>
+            <form
+              onSubmit={handleSubmit}
+              className='d-flex flex-column justify-content-between'
+            >
+              <div className='inputWrapper'>
+                <input
+                  id='fullName'
+                  name='fullName'
+                  type='text'
+                  placeholder='Full Name *'
+                  className='form-control'
+                  defaultValue={formData.fullName}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className='inputWrapper'>
+                <input
+                  id='email'
+                  name='email'
+                  type='email'
+                  placeholder='Email *'
+                  className='form-control'
+                  defaultValue={formData.email}
+                  onChange={handleChange}
+                  required
+                />{' '}
+              </div>
+              <div className='inputWrapper'>
+                <input
+                  id='phoneNumber'
+                  name='phoneNumber'
+                  type='number'
+                  placeholder='Phone number *'
+                  className='form-control'
+                  defaultValue={formData.phoneNumber}
+                  onChange={handleChange}
+                  required
+                />{' '}
+              </div>
+              <div className='inputWrapper'>
+                <input
+                  id='whatsappNumber'
+                  name='whatsappNumber'
+                  type='number'
+                  placeholder='Whatsapp number *'
+                  className='form-control'
+                  defaultValue={formData.whatsappNumber}
+                  onChange={handleChange}
+                  required
+                />{' '}
+              </div>
+              <div className='inputWrapper'>
+                <select
+                  className='form-select'
+                  id='category'
+                  name='category'
+                  defaultValue={formData.category}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value=''>Select your category</option>
+                  <option value='LandLord'>Landlord</option>
+                  <option value='Agent'>Agent</option>
+                  <option value='Tenant'>Tenant</option>
+                  <option value='Advertiser'>Advertiser</option>
+                </select>
+              </div>
+              <div className='inputWrapper'>
+                <button type='submit' className='main-btn col-12'>
+                  {loading ? 'Sending...' : 'Send'}
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
 
         <section className='d-flex flex-column'>
           <p className='my-3'>For more information reach out to us via: </p>

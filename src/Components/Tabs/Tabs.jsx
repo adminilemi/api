@@ -22,7 +22,7 @@ function Tabs() {
 
   return (
     <main className='tabsContainer'>
-      <section className='tabTitleContainer d-flex  col-12 col-lg-10 align-items-center'>
+      <section className='tabTitleContainer d-flex justify-content-between col-12 col-md-6 col-lg-8 align-items-center'>
         {TabsData.TabTitle.map((tab, idx) => (
           <section key={idx}>
             <TabTitle
