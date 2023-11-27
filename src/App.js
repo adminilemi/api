@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import NavBar from './Components/Navbar/NavBar';
 import Footer from './Components/main-components/Footer';
 import AboutUs from './pages/AboutUs/AboutUs';
+import Success from './pages/SubscribeForm/Success';
 
 function App() {
   const AOS = require('aos');
@@ -23,6 +24,7 @@ function App() {
           <Route path='/about' element={<AboutUs />} />
           <Route path='/join-form' element={<SubscribePage />} />
           <Route path='/contact' element={<ContactUs />} />
+          <Route path='/success' element={<Success />} />
         </Routes>
         <Footer />
       </Router>

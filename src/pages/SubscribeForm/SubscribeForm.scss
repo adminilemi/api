@@ -16,7 +16,9 @@
       background: transparent !important;
     }
   }
-
+  .success {
+    color: var(--pryColor);
+  }
   img {
     height: auto;
   }

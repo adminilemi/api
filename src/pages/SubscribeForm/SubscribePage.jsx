@@ -5,51 +5,60 @@ import './SubscribeForm.scss';
 import addressImage from '../../assets/images/AddressImage.svg';
 import phoneImage from '../../assets/images/PhoneImage.svg';
 import emailImage from '../../assets/images/EmailImage.svg';
-import { useState } from 'react';
-import axios from 'axios';
+// import { useState } from 'react';
+// import axios from 'axios';
+import { useForm } from '@formspree/react';
+import { useNavigate } from 'react-router-dom';
 
 function SubscribePage() {
-  const [formData, setFormdata] = useState({
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    whatsappNumber: '',
-    category: '',
-  });
-
-  // const [errors, setErrors] = useState({
-  //   error: false,
-  //   errMessage: '',
+  // const [formData, setFormdata] = useState({
+  //   fullName: '',
+  //   email: '',
+  //   phoneNumber: '',
+  //   whatsappNumber: '',
+  //   category: '',
   // });
 
-  const [loading, setLoading] = useState(false);
+  // // const [errors, setErrors] = useState({
+  // //   error: false,
+  // //   errMessage: '',
+  // // });
 
-  // Handle form event change
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormdata((prevData) => ({ ...prevData, [id]: value }));
-  };
+  // const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    console.log(formData);
+  // // Handle form event change
+  // const handleChange = (e) => {
+  //   const { id, value } = e.target;
+  //   setFormdata((prevData) => ({ ...prevData, [id]: value }));
+  // };
 
-    try {
-      if (formData) {
-        const sendForm = await axios.post(
-          'https://ile-mi-waitlist-backend-production.up.railway.app/user/join-wait-list',
-          formData,
-        );
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   console.log(formData);
 
-        console.log(sendForm);
-        setLoading(false);
-      }
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
+  //   try {
+  //     if (formData) {
+  //       const sendForm = await axios.post(
+  //         'https://ile-mi-waitlist-backend-production.up.railway.app/user/join-wait-list',
+  //         formData,
+  //       );
+
+  //       console.log(sendForm);
+  //       setLoading(false);
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     setLoading(false);
+  //   }
+  // };
+  const navigate = useNavigate();
+  const [state, handleSubmit] = useForm('xknllryw');
+
+  if (state.succeeded) {
+    navigate('/success');
+  }
+
   return (
     <main className='subPage'>
       <HeroPageReUseable text='Subscribe Form' />
@@ -75,8 +84,6 @@ function SubscribePage() {
                   type='text'
                   placeholder='Full Name *'
                   className='form-control'
-                  defaultValue={formData.fullName}
-                  onChange={handleChange}
                   required
                 />
               </div>
@@ -87,8 +94,6 @@ function SubscribePage() {
                   type='email'
                   placeholder='Email *'
                   className='form-control'
-                  defaultValue={formData.email}
-                  onChange={handleChange}
                   required
                 />{' '}
               </div>
@@ -99,8 +104,6 @@ function SubscribePage() {
                   type='number'
                   placeholder='Phone number *'
                   className='form-control'
-                  defaultValue={formData.phoneNumber}
-                  onChange={handleChange}
                   required
                 />{' '}
               </div>
@@ -111,8 +114,6 @@ function SubscribePage() {
                   type='number'
                   placeholder='Whatsapp number *'
                   className='form-control'
-                  defaultValue={formData.whatsappNumber}
-                  onChange={handleChange}
                   required
                 />{' '}
               </div>
@@ -121,8 +122,6 @@ function SubscribePage() {
                   className='form-select'
                   id='category'
                   name='category'
-                  defaultValue={formData.category}
-                  onChange={handleChange}
                   required
                 >
                   <option value=''>Select your category</option>
@@ -134,7 +133,7 @@ function SubscribePage() {
               </div>
               <div className='inputWrapper'>
                 <button type='submit' className='main-btn col-12'>
-                  {loading ? 'Sending...' : 'Send'}
+                  Send
                 </button>
               </div>
             </form>
