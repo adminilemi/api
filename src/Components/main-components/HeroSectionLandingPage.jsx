@@ -12,7 +12,9 @@ function HeroSectionLandingPage() {
           className='text d-flex flex-column  text-center text-lg-start col-12 col-md-8 mx-auto col-lg-4 '
         >
           <div className='d-flex flex-column justify-content-between ms-lg-4 ms-0'>
-            <h1 className='my-3'>Buy, rent, or sell your property easily</h1>
+            <h1 className='my-3'>
+              Your one stop address for all your property needs.
+            </h1>
             <p>
               A great platform to buy, sell, or even rent your properties
               without any commissions.
