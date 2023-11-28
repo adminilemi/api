@@ -1,53 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ContactUs.scss';
 import HeroPageReUseable from '../../Components/Re-useable-components/HeroPageReUseable';
 import addressImage from '../../assets/images/AddressImage.svg';
 import phoneImage from '../../assets/images/PhoneImage.svg';
 import emailImage from '../../assets/images/EmailImage.svg';
 import AreYourALandord from '../../Components/AreYourALandord';
-import axios from 'axios';
 import map from '../../assets/images/map.png';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from '@formspree/react';
 
 function ContactUs() {
-  const [formData, setFormdata] = useState({
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    whatsappNumber: '',
-    category: '',
-  });
+  const navigate = useNavigate();
+  const [state, handleSubmit] = useForm('meqbbzne');
 
-  const [loading, setLoading] = useState(false);
-
-  // Handle form event change
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormdata((prevData) => ({ ...prevData, [id]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    console.log(formData);
-
-    try {
-      if (formData) {
-        const sendForm = await axios.post(
-          'https://ile-mi-waitlist-backend-production.up.railway.app/user/join-wait-list',
-          formData,
-        );
-        // Log the response status and body
-        console.log('Response Status:', sendForm.status);
-        const data = await sendForm.json();
-
-        console.log(data);
-        setLoading(false);
-      }
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
+  if (state.succeeded) {
+    navigate('/success');
+  }
 
   return (
     <main className='contact'>
@@ -73,8 +41,6 @@ function ContactUs() {
                   type='text'
                   placeholder='Full Name *'
                   className='form-control'
-                  defaultValue={formData.fullName}
-                  onChange={handleChange}
                   required
                 />
               </div>
@@ -85,8 +51,6 @@ function ContactUs() {
                   type='email'
                   placeholder='Email *'
                   className='form-control'
-                  defaultValue={formData.email}
-                  onChange={handleChange}
                   required
                 />{' '}
               </div>
@@ -97,8 +61,6 @@ function ContactUs() {
                   type='number'
                   placeholder='Phone number *'
                   className='form-control'
-                  defaultValue={formData.phoneNumber}
-                  onChange={handleChange}
                   required
                 />{' '}
               </div>
@@ -109,8 +71,6 @@ function ContactUs() {
                   type='number'
                   placeholder='Whatsapp number *'
                   className='form-control'
-                  defaultValue={formData.whatsappNumber}
-                  onChange={handleChange}
                   required
                 />{' '}
               </div>
@@ -119,8 +79,6 @@ function ContactUs() {
                   className='form-select'
                   id='category'
                   name='category'
-                  defaultValue={formData.category}
-                  onChange={handleChange}
                   required
                 >
                   <option value=''>How did you find us?</option>
@@ -133,7 +91,7 @@ function ContactUs() {
               </div>
               <div className='inputWrapper'>
                 <button type='submit' className='main-btn col-12'>
-                  {loading ? 'Sending...' : 'Send'}
+                  Send
                 </button>
               </div>
             </form>
